@@ -48,7 +48,7 @@ export const getCoverLetterById = asyncHandler(async (req, res) => {
 
 // Update CoverLetter
 export const updateCoverLetter = asyncHandler(async (req, res) => {
-  const { style, CoverLetterData } = req.body;
+  const { style, coverLetterData } = req.body;
   
   if (!validateObjectId(req.params.id)) {
     return res.status(400).json({ message: "Invalid CoverLetter ID format." });
@@ -56,7 +56,7 @@ export const updateCoverLetter = asyncHandler(async (req, res) => {
 
   const updatedCoverLetter = await CoverLetter.findOneAndUpdate(
     { _id: req.params.id, userId: req.user.id },
-    { style, CoverLetterData },
+    { style, coverLetterData },
     { new: true }
   );
 
