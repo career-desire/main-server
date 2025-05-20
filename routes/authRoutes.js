@@ -1,13 +1,22 @@
 import express from "express";
-import { register, login, logout, refreshToken, getMe } from "../controllers/authController.js";
+import {
+  login,
+  logout,
+  refreshToken,
+  getMe,
+  registerWithOTP,
+} from "../controllers/authController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/register", register);
+// Public routes
+router.post("/register", registerWithOTP);
 router.post("/login", login);
-router.post("/logout", logout);
 router.post("/refresh", refreshToken);
+
+// Protected routes
 router.get("/me", protect, getMe);
+router.post("/logout", protect, logout);
 
 export default router;

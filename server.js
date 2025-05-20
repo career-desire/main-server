@@ -11,6 +11,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import resumeRoutes from "./routes/resumeRoutes.js";
 import coverLetterRoutes from "./routes/coverLetterRoutes.js"
+import './config/firebase.js';
 
 dotenv.config();
 connectDB();
@@ -42,24 +43,27 @@ app.use(
 
 // Apply security middlewares in production
 if (process.env.NODE_ENV === "production") {
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        "script-src": ["'self'", "'wasm-unsafe-eval'"], 
-        "worker-src": ["'self'", "blob:"],
-        "default-src": ["'self'"],
-      },
-    },
-  })
-  app.use(mongoSanitize());
+  // FIX: Properly use helmet
   app.use(
-    rateLimit({
-      windowMs: 15 * 60 * 1000,
-      max: 100,
-      keyGenerator: (req) => req.user?.id || req.ip,
-      message: "Too many requests, please try again later.",
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          "script-src": ["'self'", "'wasm-unsafe-eval'"],
+          "worker-src": ["'self'", "blob:"],
+          "default-src": ["'self'"],
+        },
+      },
     })
   );
+
+  app.use(mongoSanitize());
+
+  const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: "Too many requests, please try again later.",
+  });
+  app.use("/api/", apiLimiter);
 }
 
 // Get __dirname in ES module

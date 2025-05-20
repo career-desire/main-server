@@ -1,28 +1,32 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import { generateTokens } from "../utils/generateToken.js";
+import admin from "../config/firebase.js";
 
 // Register User
-export const register = async (req, res) => {
+export const registerWithOTP = async (req, res) => {
   try {
-    const { name, email, password, mobile } = req.body;
+    const { name, email, password, mobile, idToken } = req.body;
 
-    if (!name || !email || !password || !mobile) {
-      return res.status(400).json({ message: "All fields are required" });
+    if (!name || !email || !password || !mobile || !idToken) {
+      return res.status(400).json({ message: "All fields including OTP token are required" });
     }
 
+    // Verify Firebase ID token
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const phoneNumber = decodedToken.phone_number;
+
+    if (phoneNumber !== mobile) {
+      console.log(phoneNumber)
+      console.log()
+      return res.status(400).json({ message: "Mobile number mismatch" });
+    }
+
+    // Check if user already exists
     const existingUser = await User.findOne({ $or: [{ email }, { mobile }] });
 
     if (existingUser) {
-      if (existingUser.email === email && existingUser.mobile === mobile) {
-        return res.status(400).json({ message: "Email address and mobile number already exist" });
-      }
-      if (existingUser.email === email) {
-        return res.status(400).json({ message: "Email address already exists" });
-      }
-      if (existingUser.mobile === mobile) {
-        return res.status(400).json({ message: "Mobile number already exists" });
-      }
+      return res.status(400).json({ message: "User already exists with email or mobile" });
     }
 
     const role = email === process.env.ADMIN_EMAIL ? "admin" : "user";
@@ -35,7 +39,7 @@ export const register = async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "Strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000, 
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     return res.status(201).json({
@@ -47,9 +51,9 @@ export const register = async (req, res) => {
         role: user.role,
       },
     });
-  } catch (error) {
-    console.error("Error registering user:", error);
-    return res.status(500).json({ message: "Internal server error" });
+  } catch (err) {
+    console.error("OTP verification failed:", err);
+    res.status(401).json({ message: "Invalid or expired OTP token" });
   }
 };
 

@@ -6,7 +6,7 @@ import {
   getCoverLetterById,
   updateCoverLetter,
   deleteCoverLetter,
-} from "../controllers/CoverLetterController.js";
+} from "../controllers/coverLetterController.js";
 
 const router = express.Router();
 
