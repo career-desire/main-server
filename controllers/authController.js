@@ -3,30 +3,81 @@ import jwt from "jsonwebtoken";
 import { generateTokens } from "../utils/generateToken.js";
 import admin from "../config/firebase.js";
 
+// Validate user
+export const validateUser = async (req, res) => {
+  const { name, email, mobile } = req.body;
+
+  if (!name || !email || !mobile) {
+    return res.status(400).json({ valid: false, message: "All fields are required." });
+  }
+
+  try {
+    const existingEmail = await User.findOne({ email: email.toLowerCase() });
+    const existingMobile = await User.findOne({ mobile });
+
+    if (existingEmail && existingMobile) {
+      return res.status(409).json(
+        { 
+          valid: false, 
+          message: "Email & Mobile number already registered.", 
+          remainingAttempts: req.remainingAttempts 
+        });
+    }
+
+    if (existingEmail) {
+      return res.status(409).json(
+        { 
+          valid: false, 
+          message: "Email already registered.", 
+          remainingAttempts: req.remainingAttempts 
+        });
+    }
+
+    if (existingMobile) {
+      return res.status(409).json(
+        { 
+          valid: false, 
+          message: "Mobile number already registered.", 
+          remainingAttempts: req.remainingAttempts 
+        });
+    }
+
+    return res.status(200).json(
+      { 
+        valid: true, 
+        remainingAttempts: req.remainingAttempts, 
+      });
+  } catch (error) {
+    console.error("Validation error:", error);
+    return res.status(500).json({ valid: false, message: "Server error. Please try again." });
+  }
+};
+
 // Register User
-export const registerWithOTP = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { name, email, password, mobile, idToken } = req.body;
 
     if (!name || !email || !password || !mobile || !idToken) {
-      return res.status(400).json({ message: "All fields including OTP token are required" });
+      return res.status(400).json({
+        message: "All fields including OTP token are required.",
+      });
     }
 
-    // Verify Firebase ID token
     const decodedToken = await admin.auth().verifyIdToken(idToken);
     const phoneNumber = decodedToken.phone_number;
 
-    if (phoneNumber !== mobile) {
-      console.log(phoneNumber)
-      console.log()
-      return res.status(400).json({ message: "Mobile number mismatch" });
+    if (!phoneNumber || phoneNumber !== mobile) {
+      return res.status(400).json({
+        message: "Mobile number mismatch or missing in token."
+      });
     }
 
-    // Check if user already exists
     const existingUser = await User.findOne({ $or: [{ email }, { mobile }] });
-
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists with email or mobile" });
+      return res.status(409).json({
+        message: "User already exists with this email or mobile."
+      });
     }
 
     const role = email === process.env.ADMIN_EMAIL ? "admin" : "user";
@@ -48,12 +99,19 @@ export const registerWithOTP = async (req, res) => {
         id: user.id,
         name: user.name,
         email: user.email,
-        role: user.role,
-      },
+      }
     });
   } catch (err) {
-    console.error("OTP verification failed:", err);
-    res.status(401).json({ message: "Invalid or expired OTP token" });
+    console.error("Registration failed:", err);
+
+    let message = "Invalid or expired OTP token.";
+    if (err.code === "auth/id-token-expired") {
+      message = "OTP token expired. Please request a new one.";
+    }
+
+    return res.status(401).json({
+      message
+    });
   }
 };
 
@@ -130,6 +188,49 @@ export const getMe = async (req, res) => {
   } catch (error) {
     console.error("Error fetching user:", error);
     res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export const requestPasswordReset = async (req, res) => {
+  try {
+    const { mobile } = req.body;
+    if (!mobile) return res.status(400).json({ message: "Mobile number is required" });
+
+    const user = await User.findOne({ mobile });
+    if (!user) return res.status(404).json({ message: "User does not exist" });
+
+    res.status(200).json({
+      message: "OTP can be sent by Firebase client.",
+      remainingAttempts: req.remainingAttempts,
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const resetPassword = async (req, res) => {
+  try {
+    const { mobile, newPassword, idToken } = req.body;
+    if (!mobile || !newPassword || !idToken) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    if (decodedToken.phone_number !== mobile) {
+      return res.status(400).json({ message: "Mobile number mismatch" });
+    }
+
+    const user = await User.findOne({ mobile });
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    user.password = newPassword;
+    await user.save();
+
+    res.status(200).json({ message: "Password has been reset successfully." });
+  } catch (error) {
+    console.error("Error resetting password:", error);
+    res.status(500).json({ message: "Failed to reset password." });
   }
 };
 

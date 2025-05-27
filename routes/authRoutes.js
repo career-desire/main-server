@@ -4,19 +4,30 @@ import {
   logout,
   refreshToken,
   getMe,
-  registerWithOTP,
+  register,
+  requestPasswordReset,
+  resetPassword,
+  validateUser,
 } from "../controllers/authController.js";
 import { protect } from "../middleware/authMiddleware.js";
+import { otpAttemptLimiter } from "../utils/attemptLimiter.js";
 
 const router = express.Router();
 
-// Public routes
-router.post("/register", registerWithOTP);
+// Registration with OTP verification and attempt limiting
+router.post("/validate-user", otpAttemptLimiter, validateUser);
+router.post("/register", register);
+
+// Login & Token Management
 router.post("/login", login);
 router.post("/refresh", refreshToken);
-
-// Protected routes
-router.get("/me", protect, getMe);
 router.post("/logout", protect, logout);
+
+// Authenticated User Info
+router.get("/me", protect, getMe);
+
+// Password Reset
+router.post("/forgot-password", otpAttemptLimiter, requestPasswordReset); 
+router.post("/verify-password", resetPassword);
 
 export default router;
