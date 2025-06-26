@@ -6,11 +6,13 @@ import {
   getResumeById,
   updateResume,
   deleteResume,
+  getResumeByAnyOne,
 } from "../controllers/resumeController.js";
 
 const router = express.Router();
 
 // Define routes with controllers
+router.get("/view-only/:id", getResumeByAnyOne);
 router.post("/", protect, createResume);
 router.get("/", protect, getAllResumes);
 router.get("/:id", protect, getResumeById);

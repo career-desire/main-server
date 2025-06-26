@@ -46,6 +46,21 @@ export const getResumeById = asyncHandler(async (req, res) => {
   res.json(resume);
 });
 
+// Get Specific Resume
+export const getResumeByAnyOne = asyncHandler(async (req, res) => {
+  if (!validateObjectId(req.params.id)) {
+    return res.status(400).json({ message: "Invalid resume ID format." });
+  }
+
+  const resume = await Resume.findOne({ _id: req.params.id });
+
+  if (!resume) {
+    return res.status(404).json({ message: "Resume not found" });
+  }
+
+  res.json(resume);
+});
+
 // Update Resume
 export const updateResume = asyncHandler(async (req, res) => {
   const { style, resumeData } = req.body;
