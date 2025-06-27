@@ -46,6 +46,21 @@ export const getCoverLetterById = asyncHandler(async (req, res) => {
   res.json(coverLetter);
 });
 
+// Get Specific CoverLetter view by anyone
+export const getCoverLetterByAnyne = asyncHandler(async (req, res) => {
+  if (!validateObjectId(req.params.id)) {
+    return res.status(400).json({ message: "Invalid CoverLetter ID format." });
+  }
+
+  const coverLetter = await CoverLetter.findOne({ _id: req.params.id });
+
+  if (!coverLetter) {
+    return res.status(404).json({ message: "CoverLetter not found" });
+  }
+
+  res.json(coverLetter);
+});
+
 // Update CoverLetter
 export const updateCoverLetter = asyncHandler(async (req, res) => {
   const { style, coverLetterData } = req.body;

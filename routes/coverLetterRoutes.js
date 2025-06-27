@@ -6,11 +6,13 @@ import {
   getCoverLetterById,
   updateCoverLetter,
   deleteCoverLetter,
+  getCoverLetterByAnyone,
 } from "../controllers/coverLetterController.js";
 
 const router = express.Router();
 
 // Define routes with controllers
+router.get("/view-only/:id", getCoverLetterByAnyone);
 router.post("/", protect, createCoverLetter);
 router.get("/", protect, getAllCoverLetter);
 router.get("/:id", protect, getCoverLetterById);
