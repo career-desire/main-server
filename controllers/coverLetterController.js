@@ -47,7 +47,7 @@ export const getCoverLetterById = asyncHandler(async (req, res) => {
 });
 
 // Get Specific CoverLetter view by anyone
-export const getCoverLetterByAnyne = asyncHandler(async (req, res) => {
+export const getCoverLetterByAnyone = asyncHandler(async (req, res) => {
   if (!validateObjectId(req.params.id)) {
     return res.status(400).json({ message: "Invalid CoverLetter ID format." });
   }
