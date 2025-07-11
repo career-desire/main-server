@@ -44,9 +44,7 @@ Using the structured resume data below, generate an optimized, ATS-friendly vers
 📌 Instructions:
 - Improve clarity, impact, and alignment with job role.
 - Use strong, action-based language.
-- Format only description fields and summary, skill sections using:
-  <strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>/<ol>, <li>, <h1>-<h3>
-- Combine tags when needed (e.g., <strong><em>...</em></strong>)
+- Use only these HTML tags (only in descriptions, summary, and skill section): <strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>/<ol>, <li>, <h1>-<h3> combine tags when needed (e.g., <strong><em>...</em></strong>)
 - Do not alter or add to the structure — update values only.
 
 Parsed Resume JSON:
@@ -85,7 +83,7 @@ You are an expert resume writer. Generate a professional, realistic, and tailore
 - Summary: Concise and role-focused.
 - Experience: Include 2–3 bullet points per job (use placeholder org names).
 - Projects & Courses: Align with ${industry || jobRole}.
-- Use only these HTML tags (in text fields): <strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>/<ol>, <li>, <h1>-<h3>.
+- Use only these HTML tags (only in descriptions, summary, and skill section): <strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>/<ol>, <li>, <h1>-<h3>.
 - Keep structure clean for reliable PDF parsing.
 - Do **not** fill personal details (name, email, etc.).
 
