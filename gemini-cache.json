@@ -1,0 +1,592 @@
+{
+  "cache": {
+    "0764e22db2f6e6c5a7e3a29f8f4ee362277cc284700d42516d05da94895c8699": {
+      "name": "Aanya Sharma",
+      "jobTitle": "Software Engineer",
+      "email": "aanya.sharma@email.com",
+      "phone": "+91-9876543210",
+      "location": "Bengaluru, Karnataka, India",
+      "linkedin": "linkedin.com/in/aanyasharma",
+      "gitHub": "github.com/aanyasharma",
+      "portfolio": "aanyasharma.portfolio.com",
+      "blogs": "aanyasharma.medium.com",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly motivated and results-oriented Software Engineering student at the Indian Institute of Technology (IIT) Madras, seeking an entry-level Software Engineer position.  Possessing a strong foundation in Java, Python, and data structures and algorithms, with experience in developing web applications and contributing to open-source projects. Eager to apply my skills and knowledge to solve real-world problems and contribute to a dynamic team. Proven ability to learn quickly and adapt to new technologies. </p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Software Development Intern",
+            "subTitle": "XYZ Corp, Bengaluru",
+            "year": "Summer 2023",
+            "description": "<ul><li>Developed and implemented a new feature for XYZ Corp's flagship product using Java and Spring Boot, resulting in a <strong>15% improvement</strong> in user engagement.</li><li>Collaborated with a team of 3 engineers to design and develop a RESTful API for seamless integration with third-party services.</li><li>Contributed to the improvement of existing codebase by fixing bugs and improving code quality, leading to a <strong>10% reduction</strong> in application crashes.</li></ul>"
+          },
+          {
+            "title": "Open Source Contributor",
+            "subTitle": "GitHub",
+            "year": "2022-Present",
+            "description": "<ul><li>Contributed to multiple open-source projects on GitHub, enhancing my skills in version control and collaborative software development.</li><li>Successfully implemented features and resolved bugs in several repositories, gaining valuable experience in working with diverse teams and technologies.</li><li>Improved code quality and documentation, gaining recognition from the project maintainers for my contributions. </li></ul>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, C++, JavaScript</li><li><strong>Frameworks/Libraries:</strong> Spring Boot, React, Node.js, Angular</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li><li><strong>Tools:</strong> Git, Docker, Kubernetes, AWS</li><li><strong>Operating Systems:</strong> Linux, Windows, macOS</li><li><strong>Methodologies:</strong> Agile, Scrum</li></ul>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
+            "subTitle": "Indian Institute of Technology (IIT) Madras",
+            "year": "2020-2024 (Expected)",
+            "description": "<p>CGPA: 8.5/10</p>"
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": [
+          {
+            "title": "E-commerce Website using React and Node.js",
+            "year": "2023",
+            "description": "<p>Developed a fully functional e-commerce website with features like user authentication, product catalog, shopping cart, and order management. Utilized React for the front-end and Node.js with Express.js for the back-end. Integrated with a payment gateway for secure transactions.</p>"
+          },
+          {
+            "title": "Machine Learning Model for Stock Price Prediction",
+            "year": "2022",
+            "description": "<p>Built a machine learning model using Python and scikit-learn to predict stock prices based on historical data. Utilized various algorithms such as Linear Regression and Random Forest to achieve high accuracy in prediction.</p>"
+          }
+        ]
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": [
+          {
+            "title": "Data Structures and Algorithms",
+            "subTitle": "IIT Madras",
+            "year": "2022",
+            "description": ""
+          },
+          {
+            "title": "Introduction to Machine Learning",
+            "subTitle": "Coursera (Andrew Ng)",
+            "year": "2022",
+            "description": ""
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "<p>Hindi (Native), English (Fluent)</p>"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    },
+    "d990b059e70555e6509663b131d39958b72d924d56dfa67e3719847590732205": {
+      "name": "Rohan Sharma",
+      "jobTitle": "Senior Software Engineer",
+      "email": "rohan.sharma@email.com",
+      "phone": "+91-9876543210",
+      "location": "Bengaluru, Karnataka, India",
+      "linkedin": "linkedin.com/in/rohansharma",
+      "gitHub": "github.com/rohansharma",
+      "portfolio": "rohansharma.portfolio.com",
+      "blogs": "rohansharma.medium.com",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly accomplished and results-oriented Senior Software Engineer with 8+ years of experience in designing, developing, and deploying robust and scalable software solutions in the technology industry. Proven ability to lead teams, mentor junior engineers, and deliver projects on time and within budget. Expertise in Java, Spring Boot, Microservices architecture, and cloud technologies (AWS). Passionate about building high-quality software and contributing to innovative projects.</p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Senior Software Engineer",
+            "subTitle": "XYZ Tech Solutions",
+            "year": "2018 - Present",
+            "description": "<p><strong>Led</strong> the development of a new microservices-based platform, resulting in a 30% improvement in system performance.<br><strong>Mentored</strong> a team of 5 junior engineers, providing guidance on best practices and technical challenges.<br><strong>Designed and implemented</strong> RESTful APIs using Spring Boot and Java.<br><strong>Collaborated</strong> with cross-functional teams to deliver high-quality software products.<br><strong>Utilized</strong> AWS services such as EC2, S3, and Lambda for deploying and managing applications.</p>"
+          },
+          {
+            "title": "Software Engineer",
+            "subTitle": "ABC Technologies",
+            "year": "2015 - 2018",
+            "description": "<p><strong>Developed</strong> and maintained several web applications using Java, Spring, and Hibernate.<br><strong>Implemented</strong> unit and integration tests to ensure high-quality code.<br><strong>Contributed</strong> to the improvement of the software development process.<br><strong>Worked</strong> on agile development methodologies such as Scrum and Kanban.</p>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<p><strong>Programming Languages:</strong> Java, Python, JavaScript<br><strong>Frameworks/Libraries:</strong> Spring Boot, Spring MVC, Hibernate, React, Angular<br><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB<br><strong>Cloud Technologies:</strong> AWS (EC2, S3, Lambda, RDS), Azure<br><strong>Tools:</strong> Git, Docker, Kubernetes, Jenkins, Maven<br><strong>Methodologies:</strong> Agile (Scrum, Kanban), Waterfall<br><strong>Other:</strong> Microservices Architecture, RESTful APIs, Design Patterns, Problem-solving, Team Leadership, Mentoring</p>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Technology (M.Tech)",
+            "subTitle": "Indian Institute of Technology (IIT) Delhi",
+            "year": "2015",
+            "description": "<p><strong>Major:</strong> Computer Science and Engineering</p>"
+          },
+          {
+            "title": "Bachelor of Technology (B.Tech)",
+            "subTitle": "Indian Institute of Technology (IIT) Kanpur",
+            "year": "2013",
+            "description": "<p><strong>Major:</strong> Computer Science and Engineering</p>"
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": []
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": []
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "<p>Hindi (Native), English (Fluent)</p>"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    },
+    "e1b2c3e6946e8cb068bfd4145e358d35ee8f28edf5ee7a16494c81d17e88a61d": {
+      "name": "",
+      "jobTitle": "Manager Software Engineer",
+      "email": "",
+      "phone": "",
+      "location": "United States",
+      "linkedin": "",
+      "gitHub": "",
+      "portfolio": "",
+      "blogs": "",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly motivated and results-oriented Manager Software Engineer with 8+ years of experience in the technology industry. Proven ability to lead and mentor engineering teams, deliver high-quality software solutions, and manage projects from inception to deployment. Expertise in Java, Python, and Agile methodologies.  Seeking a challenging role where I can leverage my skills and experience to contribute to the success of a dynamic organization.</p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Manager Software Engineer",
+            "subTitle": "Acme Corporation",
+            "year": "2020-Present",
+            "description": "<ul><li>Managed a team of 5-7 software engineers, providing technical guidance, mentoring, and performance management.</li><li>Led the design, development, and deployment of three major software projects, resulting in a 20% increase in efficiency.</li><li>Successfully implemented Agile methodologies, improving team collaboration and project delivery timelines.</li><li>Consistently exceeded project goals and deadlines, delivering high-quality software solutions within budget.</li><li>Collaborated with cross-functional teams (Product, Design, QA) to ensure alignment on project goals and requirements.</li></ul>"
+          },
+          {
+            "title": "Senior Software Engineer",
+            "subTitle": "Beta Solutions",
+            "year": "2017-2020",
+            "description": "<ul><li>Designed and developed key features for a high-traffic web application using Java and Spring Boot.</li><li>Improved application performance by 30% through code optimization and database tuning.</li><li>Implemented automated testing frameworks, resulting in a reduction of bugs by 15%.</li><li>Mentored junior engineers, providing technical guidance and support.</li><li>Actively participated in code reviews and provided constructive feedback to team members.</li></ul>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, JavaScript, C++</li><li><strong>Frameworks/Libraries:</strong> Spring Boot, React, Angular, Node.js</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li><li><strong>Tools:</strong> Git, Docker, Kubernetes, AWS, Azure</li><li><strong>Methodologies:</strong> Agile (Scrum, Kanban), Waterfall</li><li><strong>Other:</strong>  Team Leadership, Project Management, Problem-solving, Communication</li></ul>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Science in Computer Science",
+            "subTitle": "University of California, Berkeley",
+            "year": "2017",
+            "description": ""
+          },
+          {
+            "title": "Bachelor of Science in Computer Science",
+            "subTitle": "Stanford University",
+            "year": "2015",
+            "description": ""
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": [
+          {
+            "title": "Cloud-Based Inventory Management System",
+            "year": "2022",
+            "description": "<p>Developed a scalable and reliable cloud-based inventory management system using AWS services.  Improved inventory tracking accuracy by 10%.</p>"
+          },
+          {
+            "title": "Machine Learning Model for Fraud Detection",
+            "year": "2021",
+            "description": "<p>Built a machine learning model to detect fraudulent transactions with 95% accuracy.  Reduced fraud losses by 5%.</p>"
+          }
+        ]
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": [
+          {
+            "title": "Advanced Algorithms and Data Structures",
+            "subTitle": "",
+            "year": "2016",
+            "description": ""
+          },
+          {
+            "title": "Machine Learning",
+            "subTitle": "",
+            "year": "2017",
+            "description": ""
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "English (Native)"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    },
+    "fdaa14b408268df45f2c1a4d7d15ff97ed8e1ff958e244692964fdca2db37945": {
+      "name": "",
+      "jobTitle": "Senior Backend Developer",
+      "email": "",
+      "phone": "",
+      "location": "United States",
+      "linkedin": "",
+      "gitHub": "",
+      "portfolio": "",
+      "blogs": "",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly experienced and results-oriented Senior Backend Developer with 8+ years of experience designing, developing, and maintaining robust and scalable applications. Proven ability to lead teams, mentor junior developers, and deliver high-quality software solutions on time and within budget. Expertise in Java, Spring Boot, and cloud technologies (AWS, Azure).  Passionate about building efficient and maintainable systems and contributing to innovative projects.</p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Senior Backend Developer",
+            "subTitle": "Acme Corporation",
+            "year": "2020-Present",
+            "description": "<ul><li>Led the design and development of a new microservices architecture for the company's flagship product, resulting in a 30% increase in performance and scalability.</li><li>Mentored and guided a team of 5 junior developers, fostering a collaborative and productive work environment.</li><li>Implemented robust security measures, ensuring compliance with industry best practices and protecting sensitive user data.</li><li>Collaborated with cross-functional teams (frontend, QA, DevOps) to deliver high-quality software releases on time and within budget.</li></ul>"
+          },
+          {
+            "title": "Backend Developer",
+            "subTitle": "Beta Solutions",
+            "year": "2017-2020",
+            "description": "<ul><li>Developed and maintained several key backend systems using Java, Spring Boot, and MySQL.</li><li>Improved system performance by 20% through code optimization and database tuning.</li><li>Implemented RESTful APIs for seamless integration with other systems.</li><li>Contributed to the development of a new CI/CD pipeline, automating the build, test, and deployment process.</li></ul>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, JavaScript</li><li><strong>Frameworks/Libraries:</strong> Spring Boot, Spring Cloud, Hibernate, React, Node.js</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li><li><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda), Azure</li><li><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</li><li><strong>Other:</strong> Git, Agile methodologies, REST APIs, Microservices</li></ul>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Science in Computer Science",
+            "subTitle": "University of California, Berkeley",
+            "year": "2017",
+            "description": ""
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": [
+          {
+            "title": "Microservices-based E-commerce Platform",
+            "year": "2022",
+            "description": "<p>Developed a scalable and resilient e-commerce platform using a microservices architecture.  Utilized Spring Boot, Kubernetes, and AWS.</p>"
+          },
+          {
+            "title": "Real-time Data Processing System",
+            "year": "2021",
+            "description": "<p>Built a real-time data processing system using Kafka and Spark to handle high-volume data streams.</p>"
+          }
+        ]
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": [
+          {
+            "title": "Advanced Algorithms and Data Structures",
+            "subTitle": "Coursera",
+            "year": "2016",
+            "description": ""
+          },
+          {
+            "title": "Cloud Computing Fundamentals",
+            "subTitle": "Udacity",
+            "year": "2018",
+            "description": ""
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "English (Native)"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    },
+    "d0eead20d4f9ee2be69fa1f8a879049515900a0ae2c72d6363992c841ed08ec6": {
+      "name": " ",
+      "jobTitle": "Senior Backend Developer",
+      "email": " ",
+      "phone": " ",
+      "location": "India",
+      "linkedin": " ",
+      "gitHub": " ",
+      "portfolio": " ",
+      "blogs": " ",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly experienced and results-oriented Senior Backend Developer with 8+ years of experience in designing, developing, and maintaining robust and scalable applications. Proven ability to lead teams, mentor junior developers, and deliver high-quality software solutions within tight deadlines. Expertise in Java, Spring Boot, and Microservices architecture.  Passionate about leveraging cutting-edge technologies to solve complex problems and deliver exceptional user experiences.</p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Senior Backend Developer",
+            "subTitle": "TechCorp Solutions",
+            "year": "2020-Present",
+            "description": "<ul><li>Led the development and implementation of a new microservices-based architecture for the company's flagship product, resulting in a 30% increase in performance and scalability.</li><li>Mentored and guided a team of 5 junior developers, providing technical guidance and support.</li><li>Successfully delivered 3 major product releases on time and within budget, exceeding client expectations.</li><li>Implemented robust security measures to protect sensitive data and prevent unauthorized access.</li><li>Collaborated with cross-functional teams (frontend, QA, DevOps) to ensure seamless integration and delivery.</li></ul>"
+          },
+          {
+            "title": "Backend Developer",
+            "subTitle": "Innovatech Pvt. Ltd.",
+            "year": "2017-2020",
+            "description": "<ul><li>Developed and maintained several key backend systems using Java, Spring, and MySQL.</li><li>Improved system performance by 20% through code optimization and database tuning.</li><li>Implemented RESTful APIs to integrate with various third-party services.</li><li>Contributed to the design and implementation of a new CI/CD pipeline.</li><li>Resolved critical production issues and implemented preventative measures to avoid future occurrences.</li></ul>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<p><strong>Programming Languages:</strong> Java, Python, Go<br><strong>Frameworks/Libraries:</strong> Spring Boot, Spring Cloud, Hibernate, REST APIs, Node.js, React<br><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Cassandra<br><strong>Tools:</strong> Git, Docker, Kubernetes, AWS, Azure, Jenkins, Maven, Gradle<br><strong>Methodologies:</strong> Agile, Scrum, Waterfall<br><strong>Other:</strong> Microservices Architecture, Cloud Computing, Data Structures and Algorithms, Design Patterns</p>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Technology (M.Tech)",
+            "subTitle": "Indian Institute of Technology (IIT) Delhi",
+            "year": "2015-2017",
+            "description": ""
+          },
+          {
+            "title": "Bachelor of Technology (B.Tech)",
+            "subTitle": "Indian Institute of Technology (IIT) Madras",
+            "year": "2011-2015",
+            "description": ""
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": [
+          {
+            "title": "Microservices-based E-commerce Platform",
+            "year": "2022",
+            "description": "<p>Developed a scalable and robust e-commerce platform using Spring Boot, Kubernetes, and AWS.  The platform supports high traffic volumes and provides a seamless user experience.</p>"
+          },
+          {
+            "title": "Real-time Data Processing System",
+            "year": "2021",
+            "description": "<p>Designed and implemented a real-time data processing system using Kafka and Spark. The system processes large volumes of data with high throughput and low latency.</p>"
+          }
+        ]
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": [
+          {
+            "title": "Advanced Java Programming",
+            "subTitle": "Coursera",
+            "year": "2023",
+            "description": ""
+          },
+          {
+            "title": "Microservices Architecture",
+            "subTitle": "Udemy",
+            "year": "2022",
+            "description": ""
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "<p>English (Native), Hindi</p>"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    },
+    "9bbe9ae58fc24af754cca463d490db88bc1bc6db92b697d7e90e4bac48ca2bab": {
+      "name": "John Doe",
+      "jobTitle": "Senior Backend Developer",
+      "email": "john.doe@email.com",
+      "phone": "+44 7XXXXXXXXXX",
+      "location": "London, United Kingdom",
+      "linkedin": "linkedin.com/in/johndoe",
+      "gitHub": "github.com/johndoe",
+      "portfolio": "johndoe.portfolio.com",
+      "blogs": "johndoe.medium.com",
+      "summary": {
+        "title": "Summary",
+        "content": "<p>Highly experienced and results-oriented Senior Backend Developer with 8+ years of experience in designing, developing, and maintaining robust and scalable applications within the technology sector in the UK. Proven ability to lead teams, mentor junior developers, and deliver high-quality software solutions on time and within budget. Expertise in various programming languages and frameworks, with a strong focus on delivering exceptional user experiences. Seeking a challenging and rewarding role where I can leverage my skills and experience to contribute to the success of a dynamic organization.</p>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Senior Backend Developer",
+            "subTitle": "Acme Corporation",
+            "year": "2020 - Present",
+            "description": "<ul><li>Led the development and implementation of a new microservices architecture, resulting in a 30% increase in application performance.</li><li>Mentored junior developers, providing guidance and support on best practices and coding standards.</li><li>Collaborated with cross-functional teams to define and deliver features that aligned with business objectives.</li><li>Implemented robust security measures to protect sensitive data and prevent vulnerabilities.</li><li>Successfully migrated legacy systems to a cloud-based infrastructure, improving scalability and reducing operational costs.</li></ul>"
+          },
+          {
+            "title": "Backend Developer",
+            "subTitle": "Beta Solutions Ltd.",
+            "year": "2017 - 2020",
+            "description": "<ul><li>Developed and maintained several key features for high-traffic web applications using Java and Spring Boot.</li><li>Improved application performance by optimizing database queries and implementing caching mechanisms.</li><li>Integrated with third-party APIs to enhance application functionality.</li><li>Consistently delivered high-quality code that met or exceeded expectations.</li><li>Contributed to the development of a new internal API for improved data consistency.</li></ul>"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, Node.js, Go</li><li><strong>Frameworks/Libraries:</strong> Spring Boot, React, Angular, Node.js, Express.js</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Redis</li><li><strong>Cloud Platforms:</strong> AWS, Azure, GCP</li><li><strong>Tools:</strong> Git, Docker, Kubernetes, Jenkins, Jira</li><li><strong>Methodologies:</strong> Agile, Scrum</li></ul>"
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Science in Computer Science",
+            "subTitle": "University of London",
+            "year": "2017",
+            "description": ""
+          }
+        ]
+      },
+      "internship": {
+        "title": "Internship",
+        "content": []
+      },
+      "project": {
+        "title": "Project",
+        "content": [
+          {
+            "title": "Microservices Architecture Implementation",
+            "year": "2022",
+            "description": "<p>Developed a new microservices architecture for a high-traffic e-commerce platform using Spring Boot and Kubernetes. This resulted in a significant improvement in application performance and scalability.</p>"
+          },
+          {
+            "title": "Real-time Chat Application",
+            "year": "2021",
+            "description": "<p>Developed a real-time chat application using Node.js, Socket.IO, and MongoDB. The application supports features such as private and group chats, file sharing, and user authentication.</p>"
+          }
+        ]
+      },
+      "voluntary": {
+        "title": "Voluntary",
+        "content": []
+      },
+      "course": {
+        "title": "Courses",
+        "content": [
+          {
+            "title": "Advanced Java Programming",
+            "subTitle": "Coursera",
+            "year": "2023",
+            "description": ""
+          },
+          {
+            "title": "Microservices Architecture",
+            "subTitle": "Udemy",
+            "year": "2022",
+            "description": ""
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards",
+        "content": []
+      },
+      "languages": {
+        "title": "Languages",
+        "content": "English (Native)"
+      },
+      "custom": {
+        "title": "Custom",
+        "content": ""
+      }
+    }
+  }
+}

@@ -19,6 +19,6 @@ export const protect = async (req, res, next) => {
       return res.status(403).json({ message: "Access token expired" });
     }
 
-    res.status(403).json({ message: "Invalid token" });
+    res.status(403).json({ message: "Invalid token. Please refresh or log in." });
   }
 };
