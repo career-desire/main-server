@@ -9,7 +9,7 @@ import {
   getResumeByAnyOne,
 } from "../controllers/resumeController.js";
 import { upload } from "../middleware/multer.js";
-import { handleAIGeneratedResume, uploadResume } from "../controllers/aiResumeController.js";
+import { handleAIGeneratedResume, handleAIGeneratedResumeSection, uploadResume } from "../controllers/aiResumeController.js";
 
 const router = express.Router();
 
@@ -24,5 +24,6 @@ router.delete("/:id", protect, deleteResume);
 // Ai resume
 router.post("/upload", protect, upload.single("resumeFile"), uploadResume);
 router.post("/ai-resume", protect, handleAIGeneratedResume);
+router.post("/ai-resume-section", protect, handleAIGeneratedResumeSection);
 
 export default router;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { extractPlainText } from "../utils/resumeExtractor.js";
-import { extractResumeDataWithGemini, generateAIResume, generateSuggestedResume } from "../utils/aiResumePrompts.js";
+import { extractResumeDataWithGemini, generateAIResume, generateAIResumeSection, generateSuggestedResume } from "../utils/aiResumePrompts.js";
 
 export const uploadResume = async (req, res) => {
   const file = req.file;
@@ -53,21 +53,45 @@ export const uploadResume = async (req, res) => {
 };
 
 export const handleAIGeneratedResume = async (req, res) => {
-    const { jobRole, experienceLevel, industry, country, jobDescription } = req.body;
+  const { jobRole, experienceLevel, industry, country, jobDescription } = req.body;
 
-    if (!jobRole || !experienceLevel) {
-        return res.status(400).json({ message: "Missing input field" });
-    }
+  if (!jobRole || !experienceLevel) {
+    return res.status(400).json({ message: "Missing input field" });
+  }
 
-    try {
-        const aiGeneratedResume = await generateAIResume(jobRole, experienceLevel, industry, country, jobDescription);
+  try {
+    const aiGeneratedResume = await generateAIResume(jobRole, experienceLevel, industry, country, jobDescription);
 
-        return res.status(200).json({
-            message: "Resume Generated",
-            generateResume: aiGeneratedResume
-        });
-    } catch (err) {
-        console.error("Resume Generation Error:", err.message);
-        res.status(500).json({ message: err.message });
-    }
+    return res.status(200).json({
+      message: "Resume Generated",
+      generateResume: aiGeneratedResume
+    });
+  } catch (err) {
+    console.error("Resume Generation Error:", err.message);
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const handleAIGeneratedResumeSection = async (req, res) => {
+  const { section, jobTitle, sectionContent } = req.body;
+
+  if (!section) {
+    return res.status(400).json({ message: "Section is Empty" });
+  }
+
+  if (!jobTitle) {
+    return res.status(400).json({ message: "Fill all the required fields to continue!." });
+  }
+
+  try {
+    const aiGeneratedResumeSection = await generateAIResumeSection(section, jobTitle, sectionContent);
+
+    return res.status(200).json({
+      message: "Resume Section Generated",
+      generateResumeSection: aiGeneratedResumeSection
+    });
+  } catch (err) {
+    console.error("Resume Generation Error:", err.message);
+    res.status(500).json({ message: err.message });
+  }
 };

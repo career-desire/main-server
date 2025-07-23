@@ -8,7 +8,7 @@ export const protect = async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
 
-  if (!token) return res.status(401).json({ message: "Unauthorized" });
+  if (!token) return res.status(401).json({ message: "Unauthorized access" });
 
   try {
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
@@ -16,7 +16,7 @@ export const protect = async (req, res, next) => {
     next();
   } catch (error) {
     if (error.name === "TokenExpiredError") {
-      return res.status(403).json({ message: "Access token expired" });
+      return res.status(403).json({ message: "Oops! Your session timed out. Refresh the page to pick up where you left off." });
     }
 
     res.status(403).json({ message: "Invalid token. Please refresh or log in." });

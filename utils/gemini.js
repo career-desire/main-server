@@ -1,3 +1,5 @@
+// This file is optional for non chache genaration
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
 

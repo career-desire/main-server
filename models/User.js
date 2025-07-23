@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   mobile: { type: String, required: true },
   role: { type: String, default: "user" },
+  credit: { type: String, default: "1" },
+  subcription: { type: String, default: "free" },
   createdAt: { type: Date, default: Date.now },
 });
 

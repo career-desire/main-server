@@ -10,7 +10,9 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 export const askGeminiWithCache = async (prompt) => {
   const cached = await getCached(prompt);
   if (cached) {
-    return cached;
+    setTimeout(() => {
+      return cached;
+    }, 1500)
   }
 
   const result = await model.generateContent(prompt);
@@ -19,7 +21,7 @@ export const askGeminiWithCache = async (prompt) => {
   try {
     const parsed = JSON.parse(text);
     await setCached(prompt, parsed);
-    console.log("📦 Gemini response cached");
+    // console.log("Gemini response cached");
     return parsed;
   } catch (err) {
     console.error("❌ Gemini returned invalid JSON:", err.message);

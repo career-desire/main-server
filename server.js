@@ -72,8 +72,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve Vite frontend
-const frontendPath = path.join(__dirname, "../client/dist");
-app.use(express.static(frontendPath));
+// const frontendPath = path.join(__dirname, "../client/dist");
+// app.use(express.static(frontendPath));
 
 // API Routes
 app.use("/api/auth", authRoutes);
@@ -86,14 +86,14 @@ app.use("/api/*", (req, res) => {
 });
 
 // Serve frontend only if it's not an API route
-app.use((req, res, next) => {
-  const isAPI = req.path.startsWith("/api/");
-  if (!isAPI) {
-    res.sendFile(path.join(frontendPath, "index.html"));
-  } else {
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   const isAPI = req.path.startsWith("/api/");
+//   if (!isAPI) {
+//     res.sendFile(path.join(frontendPath, "index.html"));
+//   } else {
+//     next();
+//   }
+// });
 
 // Start Server
 const PORT = process.env.PORT || 5000;
