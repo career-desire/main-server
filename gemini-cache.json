@@ -584,6 +584,517 @@
           }
         ]
       }
+    },
+    "4e3bf27044bb6966edf2b9c4869f6a022fc6f26180bf6a059654eab4483a11bf": {
+      "corrected": "<p>Hello, my name is Dan.</p>"
+    },
+    "89cf01a660b9715dfb983e7782a71602e06e9abd2ef0ced264674372f42d5f5d": {
+      "corrected": "Please provide the content you wish me to review and correct.  The input is currently '[object Object]', which is not usable text."
+    },
+    "7edbf7ab6c2af222f536eeb8a7a257e27e7324868bad3790bfac59e8de7f0baa": {
+      "corrected": [
+        {
+          "title": "wen developer",
+          "subTitle": "zojo",
+          "year": "10/08 - present",
+          "description": "<p>I have been working here for the past year.</p>"
+        }
+      ]
+    },
+    "cf822e56d27441857e5b84b264fc0c9d31c28b11368b1d62bc14c13564a607d2": {
+      "corrected": [
+        {
+          "title": "wen developer",
+          "subTitle": "zojo",
+          "year": "10/08 - present",
+          "description": "<p>I have been working here for the past year.</p>"
+        }
+      ]
+    },
+    "743f042d4ca17c26cb4bd76bf4202f2016c8bacb6ae7abc50ddb6973dfe1a157": {
+      "corrected": [
+        {
+          "title": "wen developer",
+          "subTitle": "zojo",
+          "year": "10/08 - present",
+          "description": "<p>I have been working here for the past year.</p>"
+        }
+      ]
+    },
+    "8a4e8e75e1b69c6f8159c8849a23caf2e39c9201592f0454d703a858e4e48d80": {
+      "corrected": [
+        {
+          "title": "web developer",
+          "subTitle": "Company",
+          "year": "2020 - Present",
+          "description": "<p>I manage API endpoints and work on bug fixes.</p>"
+        },
+        {
+          "title": "Full Stack Software Engineer",
+          "subTitle": "Example Corp",
+          "year": "2018-2020",
+          "description": "<p>Developed and maintained web applications using Java, Spring Boot, React, and other technologies.  Collaborated with cross-functional teams to deliver high-quality software solutions.  Improved application performance by 15% through code optimization and database tuning.</p>"
+        },
+        {
+          "title": "Data Scientist",
+          "subTitle": "Acme Analytics",
+          "year": "2016-2018",
+          "description": "<p>Performed statistical analysis and data mining to identify trends and insights. Built predictive models using machine learning algorithms, such as linear regression and random forests.  Presented findings to stakeholders through clear and concise visualizations.</p>"
+        },
+        {
+          "title": "Intern",
+          "subTitle": "Beta Solutions",
+          "year": "Summer 2015",
+          "description": "<p>Assisted senior engineers with software development tasks. Gained experience in agile development methodologies and version control systems.  Learned about different software development tools and technologies.</p>"
+        },
+        {
+          "title": "Project Manager",
+          "subTitle": "Gamma Projects",
+          "year": "2021-2022",
+          "description": "<p>Managed multiple software development projects simultaneously.  Successfully delivered projects on time and within budget.  Effectively communicated with clients and stakeholders to manage expectations and resolve conflicts.  Improved project efficiency by implementing new processes and tools.</p>"
+        },
+        {
+          "title": "Software Engineer",
+          "subTitle": "Delta Technologies",
+          "year": "2014-2016",
+          "description": "<p>Designed, developed, and tested software applications.  Worked with various programming languages and technologies.  Troubleshooted and resolved software defects.  Participated in code reviews and provided constructive feedback to colleagues.</p>"
+        },
+        {
+          "title": "Technical Writer",
+          "subTitle": "Epsilon Documentation",
+          "year": "2022-Present",
+          "description": "<p>Created clear and concise technical documentation for software applications.  Worked closely with engineers to understand technical concepts and translate them into user-friendly language.  Ensured that documentation was up-to-date and accurate. Improved the overall quality and usability of the technical documentation.</p>"
+        }
+      ]
+    },
+    "3a7cfec4a36f6d25d37653704b70c05c8ed08b9e4b8adbae5c188bf7749d5137": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>My name is Dan.</p>"
+      }
+    },
+    "9200043a3cd62513650d4502c3dc5df5610b4302cedd298bb948990a05a921fc": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>The information provided seems to be invalid. Please double-check your job role and provide correct details to proceed.</p>"
+      }
+    },
+    "7f8653fbfc4fd3ef2c8c7b0197c635d1d04ad3a1509c814db83ad36d84fb60ef": {
+      "section": {
+        "title": "Section Title",
+        "content": "<p>Hello, my name is Dan.</p>"
+      }
+    },
+    "696a1b92fa432add5cc06d760dc78ac819c92eba6c85f22268a043f493068793": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>The information provided seems to be invalid. Please double-check your job role and provide correct details to proceed.</p>"
+      }
+    },
+    "3ae1879126e808be492ea6b327e16df0cd81ea67d8c242de83e9a3473fdd34a0": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>Hello, my name is Dan.</p>"
+      }
+    },
+    "c60e92fa1944001ebd941c09f0616996eb92f4c747f8310d9e3c5398c84b95d7": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>Hello, my name is Dan.</p>"
+      }
+    },
+    "8b97321857242d1a0928329e7c1430619d29bf19e1c1db0746a642a183e3ddf2": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>Hello, my name is Dan. I am a developer.</p>"
+      }
+    },
+    "c34f32f2a38442bc8ccbd433472438d67a822ff0466c9848d6669936668c2daa": [
+      {
+        "section": {
+          "title": "Summary",
+          "content": "<p>A highly motivated and experienced professional with a proven track record in project management and software development.  Seeking a challenging role where I can leverage my skills and experience to contribute to the success of a dynamic organization.</p>"
+        }
+      },
+      {
+        "section": {
+          "title": "Skills",
+          "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, C++</li><li><strong>Frameworks/Libraries:</strong> Spring, React, Angular</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li></ul>"
+        }
+      },
+      {
+        "section": {
+          "title": "Experience",
+          "content": [
+            {
+              "title": "Software Engineer",
+              "subTitle": "Acme Corporation",
+              "year": "2020-2023",
+              "description": "<ul><li>Designed and developed key features for a high-traffic web application.</li><li>Improved application performance by 20% through code optimization.</li><li>Collaborated effectively with cross-functional teams to deliver projects on time and within budget.</li></ul>"
+            },
+            {
+              "title": "Junior Developer",
+              "subTitle": "Beta Solutions",
+              "year": "2018-2020",
+              "description": "<ul><li>Gained experience in various aspects of software development, including requirement gathering, design, development, and testing.</li><li>Contributed to the development of several internal tools and applications.</li></ul>"
+            }
+          ]
+        }
+      },
+      {
+        "section": {
+          "title": "Education",
+          "content": [
+            {
+              "title": "Master of Science in Computer Science",
+              "subTitle": "University of California, Berkeley",
+              "year": "2018",
+              "description": "<ul><li>Graduated with honors.</li></ul>"
+            },
+            {
+              "title": "Bachelor of Science in Computer Science",
+              "subTitle": "Stanford University",
+              "year": "2016",
+              "description": "<ul><li>Maintained a high GPA.</li></ul>"
+            }
+          ]
+        }
+      },
+      {
+        "section": {
+          "title": "Projects",
+          "content": [
+            {
+              "title": "Personal Portfolio Website",
+              "subTitle": "Personal Project",
+              "year": "2023",
+              "description": "<ul><li>Developed a responsive website to showcase my skills and projects using React and Node.js.</li></ul>"
+            },
+            {
+              "title": "Machine Learning Model for Stock Prediction",
+              "subTitle": "Personal Project",
+              "year": "2022",
+              "description": "<ul><li>Built a machine learning model to predict stock prices using Python and scikit-learn.  The model achieved an accuracy of 75%.</li></ul>"
+            }
+          ]
+        }
+      }
+    ],
+    "53a85ed8916eb383644bb9067cc956e9507d956bf39e46942078715fb250bf55": [
+      {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Software Engineer",
+            "subTitle": "Google",
+            "year": "2020-Present",
+            "description": "<ul><li>Developed and maintained software applications using Java and Spring Boot.</li><li>Collaborated with cross-functional teams to deliver high-quality products.</li><li>Improved code quality through refactoring and unit testing.</li></ul>"
+          },
+          {
+            "title": "Data Scientist",
+            "subTitle": "Amazon",
+            "year": "2018-2020",
+            "description": "<ul><li>Developed machine learning models to improve business outcomes.</li><li>Utilized various data mining techniques to extract insights from large datasets.</li><li>Communicated findings to stakeholders through presentations and reports.</li></ul>"
+          }
+        ]
+      },
+      {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Science in Computer Science",
+            "subTitle": "Stanford University",
+            "year": "2018",
+            "description": "<ul><li>Graduated with a GPA of 3.9.</li><li>Focused on Machine Learning and Artificial Intelligence.</li></ul>"
+          },
+          {
+            "title": "Bachelor of Science in Computer Science",
+            "subTitle": "University of California, Berkeley",
+            "year": "2016",
+            "description": "<ul><li>Graduated with honors.</li><li>Relevant coursework included data structures, algorithms, and database systems.</li></ul>"
+          }
+        ]
+      },
+      {
+        "title": "Projects",
+        "content": [
+          {
+            "title": "Personal Website",
+            "subTitle": "Personal Project",
+            "year": "2023",
+            "description": "<ul><li>Developed a personal website using React and Node.js.</li><li>Implemented responsive design for optimal viewing across devices.</li></ul>"
+          }
+        ]
+      },
+      {
+        "title": "Skills",
+        "content": "The information provided seems to be invalid. Please double-check and provide correct details to proceed."
+      },
+      {
+        "title": "Summary",
+        "content": "The information provided seems to be invalid. Please double-check and provide correct details to proceed."
+      }
+    ],
+    "c5929d11b9e937709508abc5cfa350dfd4a01b74c556609ef0ac78b1d0108828": {
+      "section": {
+        "title": "Work Experience",
+        "content": [
+          {
+            "title": "Software Engineer",
+            "subTitle": "Google",
+            "year": "2020-Present",
+            "description": "<ul><li>Developed and maintained  software applications using Java and Spring Boot.</li><li>Collaborated with cross-functional teams to deliver high-quality products.</li><li>Improved application performance by 20% through code optimization.</li></ul>"
+          },
+          {
+            "title": "Data Scientist",
+            "subTitle": "Amazon",
+            "year": "2018-2020",
+            "description": "<ul><li>Designed and implemented machine learning models to improve business decisions.<br></li><li>Utilized various data mining techniques to extract valuable insights from large datasets.</li><li>Presented findings and recommendations to senior management.</li></ul>"
+          }
+        ]
+      }
+    },
+    "81b413bf2111a794a66f3ca04af5ea699666fb43243925446b47afcaf6bf9641": {
+      "basics": {
+        "name": "John Doe",
+        "label": "Software Engineer",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "url": "linkedin.com/in/johndoe",
+        "location": {
+          "address": "123 Main Street, Anytown, CA 91234",
+          "postalCode": "91234",
+          "city": "Anytown",
+          "region": "CA",
+          "countryCode": "US"
+        },
+        "profiles": [
+          {
+            "network": "LinkedIn",
+            "url": "linkedin.com/in/johndoe",
+            "username": "johndoe"
+          }
+        ]
+      },
+      "summary": {
+        "title": "Professional Summary",
+        "content": "<p>Highly motivated and experienced software engineer with a proven track record of success in designing, developing, and implementing high-quality software solutions.  Possesses strong problem-solving skills and a passion for creating innovative applications.  Seeking a challenging and rewarding position where I can leverage my expertise to contribute to the success of a dynamic team.</p>"
+      },
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, C++, JavaScript</li><li><strong>Frameworks/Libraries:</strong> Spring, React, Angular, Node.js</li><li><strong>Databases:</strong> SQL, MySQL, PostgreSQL, MongoDB</li><li><strong>Tools:</strong> Git, Docker, Kubernetes, AWS</li></ul>"
+      },
+      "experience": {
+        "title": "Experience",
+        "content": [
+          {
+            "title": "Software Engineer",
+            "subTitle": "Acme Corporation",
+            "year": "2020-2023",
+            "description": "<ul><li>Designed and developed several key features for a flagship product, resulting in a 20% increase in user engagement.</li><li>Collaborated with cross-functional teams to deliver high-quality software on time and within budget.</li><li>Implemented new technologies to improve the performance and scalability of existing systems.</li><li>Mentored junior engineers and provided technical guidance.</li></ul>"
+          },
+          {
+            "title": "Junior Software Engineer",
+            "subTitle": "Beta Company",
+            "year": "2018-2020",
+            "description": "<ul><li>Developed and maintained several web applications using Java and Spring framework.</li><li>Participated in all phases of the software development lifecycle, from requirements gathering to deployment.</li><li>Gained valuable experience in agile development methodologies.</li></ul>"
+          }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "content": [
+          {
+            "title": "Master of Science in Computer Science",
+            "subTitle": "Stanford University",
+            "year": "2018",
+            "description": "<ul><li>GPA: 3.8</li></ul>"
+          },
+          {
+            "title": "Bachelor of Science in Computer Science",
+            "subTitle": "University of California, Berkeley",
+            "year": "2016",
+            "description": "<ul><li>GPA: 3.7</li></ul>"
+          }
+        ]
+      },
+      "projects": {
+        "title": "Projects",
+        "content": [
+          {
+            "title": "Personal Portfolio Website",
+            "subTitle": "Personal Project",
+            "year": "2023",
+            "description": "<ul><li>Developed a responsive personal portfolio website using React and Node.js.</li><li>Deployed the website to AWS using Docker and Kubernetes.</li></ul>"
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards and Recognition",
+        "content": [
+          {
+            "title": "Dean's List",
+            "subTitle": "Stanford University",
+            "year": "2017, 2018",
+            "description": ""
+          }
+        ]
+      },
+      "references": {
+        "title": "References",
+        "content": "Available upon request."
+      }
+    },
+    "6f43efb65f35f73728f8e699bc4bb50a577538fc4a683979e2c0fb40c3b9d51e": {
+      "basics": {
+        "name": "John Doe",
+        "label": "Software Engineer",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "url": "https://johndoe.com",
+        "location": {
+          "address": "123 Main Street",
+          "postalCode": "90210",
+          "city": "Beverly Hills",
+          "state": "CA",
+          "country": "USA"
+        },
+        "summary": {
+          "title": "Summary",
+          "content": "<p>Highly motivated and experienced software engineer with a proven track record in designing, developing, and implementing high-quality software solutions.  Possesses strong problem-solving skills and a passion for creating innovative and efficient applications.  Seeking a challenging role where I can leverage my expertise to contribute to a dynamic team and achieve organizational goals.</p>"
+        }
+      },
+      "experience": [
+        {
+          "title": "Software Engineer",
+          "subTitle": "Acme Corporation",
+          "year": "2020-2023",
+          "description": "<ul><li>Developed and maintained several key features for the company's flagship product.</li><li>Collaborated with a team of engineers to design and implement new software solutions.</li><li>Improved the performance and scalability of existing applications.</li><li>Successfully debugged and resolved complex software issues.</li></ul>"
+        },
+        {
+          "title": "Junior Software Engineer",
+          "subTitle": "Beta Solutions",
+          "year": "2018-2020",
+          "description": "<ul><li>Assisted senior engineers in the development of software applications.</li><li>Gained experience in various software development methodologies.</li><li>Contributed to the improvement of team processes and workflows.</li></ul>"
+        }
+      ],
+      "education": [
+        {
+          "title": "Master of Science in Computer Science",
+          "subTitle": "Stanford University",
+          "year": "2018",
+          "description": "<p>GPA: 3.8</p>"
+        },
+        {
+          "title": "Bachelor of Science in Computer Science",
+          "subTitle": "University of California, Berkeley",
+          "year": "2016",
+          "description": "<p>GPA: 3.7</p>"
+        }
+      ],
+      "skills": {
+        "title": "Skills",
+        "content": "<ul><li><strong>Programming Languages:</strong> Java, Python, C++, JavaScript</li><li><strong>Frameworks/Libraries:</strong> Spring, React, Angular, Node.js</li><li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li><li><strong>Tools:</strong> Git, Docker, Kubernetes</li></ul>"
+      },
+      "projects": [
+        {
+          "title": "Project Alpha",
+          "subTitle": "Personal Project",
+          "year": "2022",
+          "description": "<p>Developed a web application for managing personal finances.  Utilized React, Node.js, and MongoDB.</p>"
+        },
+        {
+          "title": "Project Beta",
+          "subTitle": "Team Project",
+          "year": "2021",
+          "description": "<p>Created a mobile application for tracking fitness goals.  Used Java and Android Studio.</p>"
+        }
+      ],
+      "references": {
+        "title": "References",
+        "content": "<p>Available upon request.</p>"
+      }
+    },
+    "7e9b56fef93fbe8af8826dcc50d1864f5124f0429ea31cc6d2dfd8863a99fe49": {
+      "section": {
+        "title": "Section Title",
+        "content": "<p>Hello, my name is Dan.</p>"
+      }
+    },
+    "cd4eacdfbf2f61f6ae297967ccb53ffa628f411e40220a9c2637fd120e5c6b25": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>Hello, my name is Dan. I am a web developer.</p>"
+      }
+    },
+    "7a0da1dc8ea089cd871dc6ba2894f4e7e2142992b372ba30fa7eb3f0b236dcca": {
+      "section": {
+        "title": "Summary",
+        "content": "<p>Hello, my name is Dan. I am a web developer.</p>"
+      }
+    },
+    "e219a730f1829e3f04c4da50c114f2c6c4bac23466988f89de17424351b1697f": {
+      "content": [
+        {
+          "title": "Senior Software Engineer",
+          "subTitle": "Google LLC",
+          "year": "2020 – Present",
+          "description": "<p>Led the development and implementation of a new microservice architecture, resulting in a 30% improvement in system performance.  Mentored junior engineers and provided technical guidance on best practices.  Successfully delivered projects on time and within budget. <br>Utilized Java, Spring Boot, and Kubernetes technologies.  Collaborated effectively with cross-functional teams including product managers and designers.  Consistently exceeded expectations and received positive feedback from stakeholders.</p>"
+        },
+        {
+          "title": "Software Engineer",
+          "subTitle": "Amazon",
+          "year": "2018 – 2020",
+          "description": "<p>Developed and maintained several key features for Amazon's flagship e-commerce platform.  Improved code quality through refactoring and unit testing.  Contributed to the improvement of team processes through agile methodologies.  Worked closely with QA to ensure high-quality releases. <br>Technologies used included Java, Python, and AWS services.</p>"
+        },
+        {
+          "title": "Junior Software Developer",
+          "subTitle": "Acme Corporation",
+          "year": "2016 – 2018",
+          "description": "<p>Gained valuable experience in software development through hands-on projects.  Learned and applied various programming languages and technologies.  Worked collaboratively with a team of experienced developers.  Developed strong problem-solving skills.  Contributed to the creation of several successful software applications.<br>Technologies used included C++, JavaScript, and SQL.</p>"
+        }
+      ]
+    },
+    "c66a5dbf50976ad64c9cb9f947115b7cd8b2580fdb14f4d05b8d7a9fdcb0e21c": [
+      {
+        "title": "Software Engineer",
+        "subTitle": "Google Inc.",
+        "year": "2020-2023",
+        "description": "<p>Developed and maintained software applications using Java and Spring Boot.  Collaborated with a team of engineers to design and implement new features.  Successfully resolved critical production issues resulting in improved system stability and performance.</p>"
+      },
+      {
+        "title": "Data Scientist",
+        "subTitle": "Acme Corporation",
+        "year": "2018-2020",
+        "description": "<ul><li>Conducted data analysis using Python and R.</li><li>Developed machine learning models to predict customer behavior.</li><li>Presented findings to stakeholders and made recommendations for business improvement.</li></ul>"
+      },
+      {
+        "title": "Project Manager",
+        "subTitle": "XYZ Company",
+        "year": "2016-2018",
+        "description": "<p>Managed multiple projects simultaneously, ensuring on-time and within-budget delivery.  Effectively communicated project status to stakeholders.  Successfully led teams through challenging situations, resolving conflicts and keeping projects on track.</p>"
+      },
+      {
+        "title": "Internship",
+        "subTitle": "Beta Solutions",
+        "year": "2015",
+        "description": "The information provided seems to be invalid. Please double-check and provide correct details to proceed."
+      },
+      {
+        "title": "Master of Science in Computer Science",
+        "subTitle": "Stanford University",
+        "year": "2018",
+        "description": "The information provided seems to be invalid. Please double-check and provide correct details to proceed."
+      },
+      {
+        "title": "",
+        "subTitle": "",
+        "year": "",
+        "description": "The information provided seems to be invalid. Please double-check and provide correct details to proceed."
+      }
+    ],
+    "198dfe89a0e03eb2795c8024af7897ce295cecc632f08544e80afa71d2b1c4f6": {
+      "content": "<p>Hello, my name is Dan. I am a web developer. I work at Amazon.</p>"
     }
   }
 }

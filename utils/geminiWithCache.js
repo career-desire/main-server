@@ -10,10 +10,10 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 export const askGeminiWithCache = async (prompt) => {
   const cached = await getCached(prompt);
   if (cached) {
-    setTimeout(() => {
-      return cached;
-    }, 1500)
+    await new Promise((res) => setTimeout(res, 1500));
+    return cached;
   }
+
 
   const result = await model.generateContent(prompt);
   const text = result.response.text().replace(/```json|```/g, "").trim();

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { extractPlainText } from "../utils/resumeExtractor.js";
-import { extractResumeDataWithGemini, generateAIResume, generateAIResumeSection, generateSuggestedResume } from "../utils/aiResumePrompts.js";
+import { extractResumeDataWithGemini, generateAIResume, generateAIResumeSection, generateSuggestedResume, spellCheck } from "../utils/aiResumePrompts.js";
 
 export const uploadResume = async (req, res) => {
   const file = req.file;
@@ -92,6 +92,26 @@ export const handleAIGeneratedResumeSection = async (req, res) => {
     });
   } catch (err) {
     console.error("Resume Generation Error:", err.message);
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const handleSpellCheck = async (req, res) => {
+  const { sectionContent } = req.body;
+
+  if (!sectionContent) {
+    return res.status(400).json({ message: "Input is Empty" });
+  }
+
+  try {
+    const spellCheckResult = await spellCheck(sectionContent);
+
+    return res.status(200).json({
+      message: "Spell check successfully completed",
+      generateSpellCheck: spellCheckResult
+    });
+  } catch (err) {
+    console.error("Spell check Error:", err.message);
     res.status(500).json({ message: err.message });
   }
 };

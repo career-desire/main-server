@@ -172,3 +172,68 @@ export const generateAIResumeSection = async (section, jobTitle, sectionContent)
   const prompt = aiResumeSectionPrompt(section, jobTitle, sectionContent);
   return await askGeminiWithCache(prompt);
 };
+
+export const spellCheckSummaryOrSkills = (sectionContent) => `
+You are an expert resume proofreader.
+
+🎯 Task:
+Fix grammar, spelling, and punctuation inside the provided **HTML string**. The input comes from a resume section like **Summary** or **Skills**.
+
+📌 Rules:
+- Only correct spelling and grammar inside the **text**
+- **Do not change** or remove any HTML tags
+- Return a **valid JSON string** as the value of the "content" key
+- Return ONLY:
+\`\`\`json
+"content": "<corrected HTML string here>"
+\`\`\`
+
+🚫 If the input is invalid or too vague, replace content with:
+\`"The information provided seems to be invalid. Please double-check and provide correct details to proceed."\`
+
+🔹 Allowed HTML tags:
+<strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>, <ol>, <li>, <h1>–<h3>
+
+📄 Provided Input:
+${sectionContent}
+`;
+
+export const spellCheckExperienceSections = (sectionContent) => `
+You are an expert resume proofreader.
+
+🎯 Task:
+Fix grammar, spelling, and punctuation inside the **"content" array** of objects. Each object represents a resume entry (like a job or project).
+
+📌 Rules:
+- Fix only the following fields: \`title\`, \`subTitle\`, \`year\`, and \`description\`
+- Keep **HTML intact** inside \`description\` — change only the text
+- Do **not** add, remove, or rename any fields
+- Return **only** the updated "content" array in valid JSON
+
+🚫 If the input is invalid or lacks sufficient information:
+- For each object: replace \`description\` with  
+  \`"The information provided seems to be invalid. Please double-check and provide correct details to proceed."\`
+- Leave all other fields (title, subTitle, year) as empty strings
+
+🔹 Allowed HTML tags in "description":
+<strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>, <ol>, <li>, <h1>–<h3>
+
+📄 Provided Input:
+${sectionContent}
+`;
+
+export const spellCheck = async (section) => {
+  let prompt;
+
+  const sectionTitle = section.title
+  const sectionContent = section.content
+  const type = sectionTitle.toLowerCase();
+  if (type === "summary" || type === "skills") {
+    prompt = spellCheckSummaryOrSkills(sectionContent);
+  } else {
+    prompt = spellCheckExperienceSections(sectionContent);
+  }
+
+  const response = await askGeminiWithCache(prompt);
+  return response;
+};
