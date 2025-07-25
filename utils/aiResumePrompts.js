@@ -84,7 +84,7 @@ You are an expert resume writer. Generate a professional, realistic, and tailore
 - Projects & Courses: Align with ${industry || jobRole}.
 - Use only these HTML tags (only in descriptions, summary, and skill section): <strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>/<ol>, <li>, <h1>-<h3>.
 - Keep structure clean for reliable PDF parsing.
-- Do **not** fill personal details (name, email, etc.).
+- Do **not** fill personal details (name, email, custom, etc.).
 
 📄 Input:
 - Role: ${jobRole}
