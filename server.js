@@ -11,6 +11,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import resumeRoutes from "./routes/resumeRoutes.js";
 import coverLetterRoutes from "./routes/coverLetterRoutes.js"
+import paymentRoutes from "./routes/paymentRoutes.js"
 import './config/firebase.js';
 
 dotenv.config();
@@ -79,6 +80,7 @@ const __dirname = path.dirname(__filename);
 app.use("/api/auth", authRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/cover-letter", coverLetterRoutes);
+app.use("/api/payment", paymentRoutes);
 
 // Return 404 for unknown API routes
 app.use("/api/*", (req, res) => {

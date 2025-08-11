@@ -1,5 +1,5 @@
-import { askGeminiWithCache } from "./geminiWithCache.js";
-// import { askGemini } from "./gemini.js";
+// import { askGeminiWithCache } from "./geminiWithCache.js";
+import { askGemini } from "./gemini.js";
 
 const aiExtractedResumePrompt = (resumeText) => `
 You are an expert resume parser. Convert the resume text below into the exact JSON format shown.
@@ -33,7 +33,7 @@ ${resumeText}
 
 export const extractResumeDataWithGemini = async (resumeText) => {
   const prompt = aiExtractedResumePrompt(resumeText);
-  return await askGeminiWithCache(prompt);
+  return await askGemini(prompt);
 };
 
 const aiSuggestedResumePrompt = (jobRole, experienceYears, extractedData) => `
@@ -53,11 +53,11 @@ ${JSON.stringify(extractedData, null, 2)}
 
 export const generateSuggestedResume = async (jobRole, experienceYears, extractedData) => {
   const prompt = aiSuggestedResumePrompt(jobRole, experienceYears, extractedData);
-  return await askGeminiWithCache(prompt);
+  return await askGemini(prompt);
 };
 
 export const aiGeneratedResumePrompt = (jobRole, experienceLevel, industry = "", country = "", jobDescription = "") => `
-You are an expert resume writer. Generate a professional, realistic, and tailored resume based on the input below. Use the exact JSON format provided.
+Generate a professional, realistic, and tailored resume based on the input below. Use the exact JSON format provided.
 
 🎯 Output Format (JSON):
 {
@@ -96,81 +96,62 @@ ${jobDescription ? `- Job Description: ${jobDescription}` : ""}
 
 export const generateAIResume = async (jobRole, experienceLevel, industry, country, jobDescription) => {
   const prompt = aiGeneratedResumePrompt(jobRole, experienceLevel, industry, country, jobDescription);
-  return await askGeminiWithCache(prompt);
+  return await askGemini(prompt);
 };
 
-export const aiResumeSectionPrompt = (section, jobTitle, sectionContent = "") => `
-You are an expert resume writer.
+export const aiResumeSectionPrompt = (section, jobTitle, sectionContent = "") => {
+  const isSimpleSection = section.toLowerCase() === "summary" || section.toLowerCase() === "skills";
 
+  const formatExample = isSimpleSection
+    ? `{
+  "section": {
+    "title": "Section Title",
+    "content": "<ul><li><strong>Skill Group:</strong> Skill A, Skill B</li></ul>"
+  }
+}`
+    : `{
+  "title": "Job/Project/Degree Title",
+  "subTitle": "Company/Institution",
+  "year": "Time Period",
+  "description": "<ul><li><strong>Responsibility or achievement</strong> here.</li></ul>"
+}`;
+
+  return `
 🎯 Objective:
-Generate a professional, realistic, and cleanly structured **${section}** section for a resume, specifically tailored to the role of **${jobTitle}**.
+Revise and clean the provided **${section}** section content to make it professional, realistic, and well-formatted — tailored to the role of **${jobTitle}**.
 
-📌 Global Rules:
-- Use only the provided input data — do **not** fabricate, infer, or assume any additional information.
-- Ensure the output is **valid JSON** that is easy to parse.
-- HTML formatting is permitted **only within the "content" field**.
-- Return **only** the requested section — no extra text, commentary, or formatting outside the section object.
-- If the provided job title is invalid, insufficient, or not a real role, return a fallback message: For the summary or skills sections, insert the following message inside the "content" field: "The information provided seems to be invalid. Please double-check your job role and provide correct details to proceed."
+📌 Instructions:
+- If input content is valid, use it only — do **not** invent or add new information.
+- If content is empty or clearly insufficient, generate a **realistic** example aligned with the job title.
+- Improve grammar, structure, clarity, and spelling.
+- Format as **valid JSON** — return exactly one object.
+- Use only valid HTML in \`content\` or \`description\`.
 
-For all other sections, insert the same message inside the "description" field of each item keep other field empty.
-
-🔹 Allowed HTML tags (in summary, skills, and descriptions only):
-\`<strong>\`, \`<em>\`, \`<u>\`, \`<a href="">\`, \`<br>\`, \`<p>\`, \`<ul>\`, \`<ol>\`, \`<li>\`, \`<h1>\`–\`<h3>\`
+🔹 Allowed HTML tags:
+<strong>, <em>, <u>, <a href="">, <br>, <p>, <ul>, <ol>, <li>, <h1>–<h3>
 
 ---
 
-🧾 Required Output Format:
-
-👉 For **summary** or **skills**:
+🧾 Output Format:
 \`\`\`json
-"section": {
-  "title": "Section Title",
-  "content": "<ul><li><strong>Skill Group:</strong> Skill A, Skill B</li><li><strong>Tools:</strong> Git, Docker</li></ul>"
-}
+${formatExample}
 \`\`\`
 
-✅ Notes:
-- \`content\` must be a **single HTML string** — not an array or object.
-- Do **not** include keys like \`items\`, \`skill\`, \`list\`, etc.
-
----
-
-👉 For **experience, education, projects**, etc.:
-\`\`\`json
-"section": {
-  "title": "Section Title",
-  "content": [
-    {
-      "title": "Job/Project Title",
-      "subTitle": "Company/Platform",
-      "year": "Time Period",
-      "description": "<ul><li><strong>Did something</strong> impactful here.</li></ul>"
-    },
-    {
-      "title": "Another Title",
-      "subTitle": "Another Place",
-      "year": "Year/Range",
-      "description": "<ul><li>More detailed bullet points</li></ul>"
-    }
-  ]
-}
-\`\`\`
-
-✅ Notes:
-- Every item must include: \`title\`, \`subTitle\`, \`year\`, and \`description\`.
-- Do **not** add any additional fields like \`responsibilities\`, \`highlights\`, etc.
+❌ Do not wrap the output with extra keys like "message", "data", or "generateResumeSection".
 
 ---
 
 📄 Provided Input:
 ${sectionContent}
 
-📌 Remember to tailor the entire section to the job role: **${jobTitle}**
+Strict Note:
+📌 Tailor improvements to match the role of ${jobTitle}. If input is provided, keep the content similar and aligned with it.
 `;
+};
 
 export const generateAIResumeSection = async (section, jobTitle, sectionContent) => {
   const prompt = aiResumeSectionPrompt(section, jobTitle, sectionContent);
-  return await askGeminiWithCache(prompt);
+  return await askGemini(prompt);
 };
 
 export const spellCheckSummaryOrSkills = (sectionContent) => `
@@ -234,6 +215,6 @@ export const spellCheck = async (section) => {
     prompt = spellCheckExperienceSections(sectionContent);
   }
 
-  const response = await askGeminiWithCache(prompt);
+  const response = await askGemini(prompt);
   return response;
 };

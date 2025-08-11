@@ -10,6 +10,7 @@ import {
 } from "../controllers/resumeController.js";
 import { upload } from "../middleware/multer.js";
 import { handleAIGeneratedResume, handleAIGeneratedResumeSection, handleSpellCheck, uploadResume } from "../controllers/aiResumeController.js";
+import { aiAttemptLimiter } from "../utils/attemptLimiter.js";
 
 const router = express.Router();
 
@@ -22,9 +23,9 @@ router.put("/:id", protect, updateResume);
 router.delete("/:id", protect, deleteResume);
 
 // Ai resume
-router.post("/upload", protect, upload.single("resumeFile"), uploadResume);
-router.post("/ai-resume", protect, handleAIGeneratedResume);
-router.post("/ai-resume-section", protect, handleAIGeneratedResumeSection);
-router.post("/spell-check", protect, handleSpellCheck);
+router.post("/upload", protect, aiAttemptLimiter, upload.single("resumeFile"), uploadResume);
+router.post("/ai-resume", protect, aiAttemptLimiter, handleAIGeneratedResume);
+router.post("/ai-resume-section", protect, aiAttemptLimiter, handleAIGeneratedResumeSection);
+router.post("/spell-check", protect, aiAttemptLimiter, handleSpellCheck);
 
 export default router;

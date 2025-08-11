@@ -184,7 +184,7 @@ export const getMe = async (req, res) => {
     const user = await User.findById(req.user.id).select("-password");
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    res.json({ user: { id: user.id, name: user.name, email: user.email } });
+    res.json({ user: { id: user.id, name: user.name, email: user.email, creditInfo: user.creditInfo } });
   } catch (error) {
     console.error("Error fetching user:", error);
     res.status(500).json({ message: "Internal server error" });

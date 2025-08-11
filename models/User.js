@@ -8,10 +8,23 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   mobile: { type: String, required: true },
   role: { type: String, default: "user" },
-  credit: { type: String, default: "1" },
-  subcription: { type: String, default: "free" },
   createdAt: { type: Date, default: Date.now },
+  creditInfo: {
+    totalCredits: { type: Number, default: 20 },       // Total available credits
+    creditsUsed: { type: Number, default: 0 },         // Credits used so far
+    // lastReset: { type: Date, default: Date.now },      // For monthly reset (if any)
+    transactions: [
+      {
+        action: { type: String, enum: ["spend", "recharge"] },
+        amount: { type: Number }, // credits added/removed
+        details: { type: String },
+        status: { type: String }, // "success" or "failed"
+        date: { type: Date, default: Date.now },
+      }
+    ]
+  }
 });
+
 
 // Hash password before saving user
 userSchema.pre("save", async function (next) {

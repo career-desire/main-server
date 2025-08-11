@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { extractPlainText } from "../utils/resumeExtractor.js";
 import { extractResumeDataWithGemini, generateAIResume, generateAIResumeSection, generateSuggestedResume, spellCheck } from "../utils/aiResumePrompts.js";
+import { checkUserCredits, deductUserCredits } from "../utils/creditManager.js";
 
 export const uploadResume = async (req, res) => {
   const file = req.file;
@@ -15,20 +16,25 @@ export const uploadResume = async (req, res) => {
   const filePath = path.join("uploads", file.filename);
 
   try {
+    await checkUserCredits(user, 1);
+
     const resumeText = await extractPlainText(filePath, file.mimetype);
 
     if (!resumeText || !resumeText.trim()) {
-      throw new Error("EMPTY_RESUME_TEXT");
+      throw new Error("Empty Resume");
     }
 
     const extractedData = await extractResumeDataWithGemini(resumeText);
+
     const suggestedData = await generateSuggestedResume(jobRole, experienceYears, extractedData);
 
+    const remainingCredits = await deductUserCredits(user, 1, "Used existing resume");
     res.status(200).json({
       message: "Resume uploaded and processed successfully",
       extracted: extractedData,
       suggested: suggestedData,
       resumeText: resumeText,
+      remainingCredits
     });
   } catch (error) {
     console.error("Resume Extraction Error:", error.message);
@@ -53,6 +59,7 @@ export const uploadResume = async (req, res) => {
 };
 
 export const handleAIGeneratedResume = async (req, res) => {
+  const user = req.user;
   const { jobRole, experienceLevel, industry, country, jobDescription } = req.body;
 
   if (!jobRole || !experienceLevel) {
@@ -60,11 +67,16 @@ export const handleAIGeneratedResume = async (req, res) => {
   }
 
   try {
+    await checkUserCredits(user, 1);
+
     const aiGeneratedResume = await generateAIResume(jobRole, experienceLevel, industry, country, jobDescription);
+
+    const remainingCredits = await deductUserCredits(user, 1, "AI Resume Generation");
 
     return res.status(200).json({
       message: "Resume Generated",
-      generateResume: aiGeneratedResume
+      generateResume: aiGeneratedResume,
+      remainingCredits
     });
   } catch (err) {
     console.error("Resume Generation Error:", err.message);
@@ -73,6 +85,7 @@ export const handleAIGeneratedResume = async (req, res) => {
 };
 
 export const handleAIGeneratedResumeSection = async (req, res) => {
+  const user = req.user;
   const { section, jobTitle, sectionContent } = req.body;
 
   if (!section) {
@@ -84,11 +97,16 @@ export const handleAIGeneratedResumeSection = async (req, res) => {
   }
 
   try {
+    await checkUserCredits(user, 1);
+
     const aiGeneratedResumeSection = await generateAIResumeSection(section, jobTitle, sectionContent);
+
+    const remainingCredits = await deductUserCredits(user, 1, "AI Resume Section Generation");
 
     return res.status(200).json({
       message: "Resume Section Generated",
-      generateResumeSection: aiGeneratedResumeSection
+      generateResumeSection: aiGeneratedResumeSection,
+      remainingCredits
     });
   } catch (err) {
     console.error("Resume Generation Error:", err.message);

@@ -36,3 +36,49 @@ export const otpAttemptLimiter = (req, res, next) => {
 
   next();
 };
+
+// Limiter For AI Features
+
+const aiAttemptStore = new Map();
+
+const MAX_AI_ATTEMPTS = 10;
+const WINDOW_MS_FOR_AI = 1 * 60 * 1000; 
+
+export const aiAttemptLimiter = (req, res, next) => {
+  const key = req.user?.id || req.ip;
+  const now = Date.now();
+
+  let aiAttemptRecord = aiAttemptStore.get(key);
+  
+  if (!aiAttemptRecord) {
+    aiAttemptStore.set(key, { count: 1, firstAttempt: now });
+    req.remainingAIAttempts = MAX_AI_ATTEMPTS - 1;
+    return next();
+  }
+
+  const { count, firstAttempt } = aiAttemptRecord;
+
+  if (now - firstAttempt > WINDOW_MS_FOR_AI) {
+    aiAttemptStore.set(key, { count: 1, firstAttempt: now });
+    req.remainingAIAttempts = MAX_AI_ATTEMPTS - 1;
+    return next();
+  }
+
+  if (count >= MAX_AI_ATTEMPTS) {
+    return res.status(429).json({
+      message: "Too many attempts. Please try again later",
+      remainingAIAttempts: 0,
+    });
+  }
+
+  aiAttemptStore.set(key, { count: count + 1, firstAttempt });
+  req.remainingAIAttempts = MAX_AI_ATTEMPTS - (count + 1);
+
+  req.aiLimitInfo = {
+    count: count + 1,
+    remaining: MAX_AI_ATTEMPTS - (count + 1),
+    resetInMs: WINDOW_MS_FOR_AI - (now - firstAttempt),
+  };
+
+  next();
+};
