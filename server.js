@@ -12,6 +12,8 @@ import authRoutes from "./routes/authRoutes.js";
 import resumeRoutes from "./routes/resumeRoutes.js";
 import coverLetterRoutes from "./routes/coverLetterRoutes.js"
 import paymentRoutes from "./routes/paymentRoutes.js"
+import atsRoutes from "./routes/atsRoutes.js"
+import customFilesRoutes from "./routes/customFilesRoutes.js"
 import './config/firebase.js';
 
 dotenv.config();
@@ -81,6 +83,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/cover-letter", coverLetterRoutes);
 app.use("/api/payment", paymentRoutes);
+app.use("/api/ats-report", atsRoutes);
+app.use("/api/custom-file", customFilesRoutes);
 
 // Return 404 for unknown API routes
 app.use("/api/*", (req, res) => {

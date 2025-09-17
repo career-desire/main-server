@@ -95,11 +95,7 @@ export const register = async (req, res) => {
 
     return res.status(201).json({
       accessToken,
-      user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-      }
+      user: { id: user.id, name: user.name, email: user.email, creditInfo: user.creditInfo, role: user.role }
     });
   } catch (err) {
     console.error("Registration failed:", err);
@@ -135,7 +131,7 @@ export const login = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    res.json({ accessToken, user: { id: user.id, name: user.name, email: user.email } });
+    res.json({ accessToken, user: { id: user.id, name: user.name, email: user.email, creditInfo: user.creditInfo, role: user.role } });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -184,7 +180,7 @@ export const getMe = async (req, res) => {
     const user = await User.findById(req.user.id).select("-password");
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    res.json({ user: { id: user.id, name: user.name, email: user.email, creditInfo: user.creditInfo } });
+    res.json({ user: { id: user.id, name: user.name, email: user.email, creditInfo: user.creditInfo, role: user.role } });
   } catch (error) {
     console.error("Error fetching user:", error);
     res.status(500).json({ message: "Internal server error" });

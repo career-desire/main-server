@@ -1,6 +1,5 @@
-import fs from "fs";
 import path from "path";
-import { extractPlainText } from "../utils/resumeExtractor.js";
+import { extractPlainText } from "../utils/textExtractor.js";
 import { extractResumeDataWithGemini, generateAIResume, generateAIResumeSection, generateSuggestedResume, spellCheck } from "../utils/aiResumePrompts.js";
 import { checkUserCredits, deductUserCredits } from "../utils/creditManager.js";
 
@@ -16,7 +15,7 @@ export const uploadResume = async (req, res) => {
   const filePath = path.join("uploads", file.filename);
 
   try {
-    await checkUserCredits(user, 1);
+    await checkUserCredits(user._id, 1);
 
     const resumeText = await extractPlainText(filePath, file.mimetype);
 
@@ -51,10 +50,6 @@ export const uploadResume = async (req, res) => {
       message,
       error: error.message,
     });
-  } finally {
-    fs.unlink(filePath, (err) => {
-      if (err) console.error("Failed to delete uploaded file:", err.message);
-    });
   }
 };
 
@@ -67,7 +62,7 @@ export const handleAIGeneratedResume = async (req, res) => {
   }
 
   try {
-    await checkUserCredits(user, 1);
+    await checkUserCredits(user._id, 1);
 
     const aiGeneratedResume = await generateAIResume(jobRole, experienceLevel, industry, country, jobDescription);
 
@@ -97,7 +92,7 @@ export const handleAIGeneratedResumeSection = async (req, res) => {
   }
 
   try {
-    await checkUserCredits(user, 1);
+    await checkUserCredits(user._id, 1);
 
     const aiGeneratedResumeSection = await generateAIResumeSection(section, jobTitle, sectionContent);
 

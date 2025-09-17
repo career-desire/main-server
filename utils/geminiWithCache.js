@@ -24,7 +24,7 @@ export const askGeminiWithCache = async (prompt) => {
     // console.log("Gemini response cached");
     return parsed;
   } catch (err) {
-    console.error("❌ Gemini returned invalid JSON:", err.message);
+    console.error("Gemini returned invalid JSON:", err.message);
     throw new Error("Gemini response was not valid JSON");
   }
 };
