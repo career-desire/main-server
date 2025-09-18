@@ -8,6 +8,10 @@ export const uploadResume = async (req, res) => {
   const user = req.user;
   const { jobRole, experienceYears } = req.body;
 
+  if (!user) {
+    return res.status(400).json({ message: "Login to continue" });
+  }
+
   if (!file) {
     return res.status(400).json({ message: "No file uploaded" });
   }
@@ -40,7 +44,7 @@ export const uploadResume = async (req, res) => {
 
     let message = "Something went wrong while processing the resume.";
 
-    if (error.message === "EMPTY_RESUME_TEXT") {
+    if (error.message === "Empty resume text") {
       message = "The resume appears empty or image-based.";
     } else if (error.message.includes("Gemini returned invalid JSON")) {
       message = "AI resume generation failed. Please try again later.";
@@ -56,6 +60,10 @@ export const uploadResume = async (req, res) => {
 export const handleAIGeneratedResume = async (req, res) => {
   const user = req.user;
   const { jobRole, experienceLevel, industry, country, jobDescription } = req.body;
+
+  if (!user) {
+    return res.status(400).json({ message: "Login to continue" });
+  }
 
   if (!jobRole || !experienceLevel) {
     return res.status(400).json({ message: "Missing input field" });
@@ -82,6 +90,10 @@ export const handleAIGeneratedResume = async (req, res) => {
 export const handleAIGeneratedResumeSection = async (req, res) => {
   const user = req.user;
   const { section, jobTitle, sectionContent } = req.body;
+
+  if (!user) {
+    return res.status(400).json({ message: "Login to continue" });
+  }
 
   if (!section) {
     return res.status(400).json({ message: "Section is Empty" });
@@ -111,6 +123,10 @@ export const handleAIGeneratedResumeSection = async (req, res) => {
 
 export const handleSpellCheck = async (req, res) => {
   const { sectionContent } = req.body;
+
+  if (!user) {
+    return res.status(400).json({ message: "Login to continue" });
+  }
 
   if (!sectionContent) {
     return res.status(400).json({ message: "Input is Empty" });

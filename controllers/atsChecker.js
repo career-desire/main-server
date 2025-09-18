@@ -9,10 +9,14 @@ export const checkATS = async (req, res) => {
     const jobDescription = req.body.description;
     const user = req.user;
 
+    if (!user) {
+      return res.status(400).json({ message: "Login to continue" });
+    }
+
     if (!file) {
       return res.status(400).json({ message: "No file uploaded" });
     }
-
+    
     const filePath = path.join("uploads", file.filename);
 
     // await checkUserCredits(user, 1);

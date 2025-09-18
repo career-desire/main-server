@@ -50,7 +50,7 @@ export const uploadCustomFile = async (req, res) => {
         const { originalname, filename, mimetype } = req.file;
         const { userName, userMobile, documentType } = req.body;
 
-        const fileURL = `/upload/custom_files/${filename}`;
+        const fileURL = `/uploads/custom_files/${filename}`;
 
         let fileType;
         if (mimetype === "application/pdf") {
