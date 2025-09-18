@@ -19,6 +19,6 @@ export const protect = async (req, res, next) => {
       return res.status(403).json({ message: "Oops! Your session timed out. Refresh the page to pick up where you left off." });
     }
 
-    res.status(403).json({ message: "Invalid token. Please refresh or log in." });
+    res.status(403).json({ message: "Please refresh and try again or log in." });
   }
 };
